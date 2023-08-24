@@ -1,4 +1,4 @@
-# Prakerja-batch-9
+# Prakerja Batch 9
 
 ## Days 1 ~ Belajar Git
 
