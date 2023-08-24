@@ -1,3 +1,3 @@
-
+file ini sudah di update oleh featureA
 
 ini file dari branch featureB
