@@ -12,3 +12,11 @@ setelah merge dari branch featureA lalu merge dari branch featureB (Conflict
 bisa terjadi jika kedua branch mengerjakan di file dan line code yang sama)
 - Gunakan merge no fast forward
 - Screenshot hasil network di github
+
+## Days 2 ~ Basic programing - Go 
+
+Tugas 
+
+- buatlah sebuah program untuk menentukan bilang prima
+- buatlah sebuah program untuk menentukan bilangan kelipatan 7
+- buatlah sebuah program untuk menghitung luas trapesium
