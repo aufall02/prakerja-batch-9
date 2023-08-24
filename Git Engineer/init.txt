@@ -1,3 +1,4 @@
 file ini sudah di update oleh featureA
-
+file ini sudah diupdate oleh featureB
+hasil bentrok setelah git merge dengan featureB
 ini file dari branch featureB
