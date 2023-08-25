@@ -30,4 +30,9 @@ func main() {
 	primes := [...]int{2,4,5,6,4,8,5,6,7,}
 	fmt.Println(reflect.ValueOf(primes).Kind())
 	fmt.Println(len(primes))
+
+//Initialized values for spesific index
+
+	angka := [5]int{2: 4, 1:9}
+	fmt.Println(angka)
 }
