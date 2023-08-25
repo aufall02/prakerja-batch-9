@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 
-	bilPrima := 15
+	bilPrima := 100
 	bilMultiple := 21
 	a := 5
 	b := 10
@@ -30,12 +30,18 @@ func isPrima(bil int) bool {
 	if bil <= 1 {
 		return false
 	}
+	
 	// cek apakah bilangan == 2 atau bilangan == 3
 	if bil == 2 || bil == 3 {
 		return true
 	}
+
+	//cek apakah bilangan genap
+	if bil % 2 == 0 {
+		return false
+	}
 	//lakukan looping untuk cek apakah bilangan bisa dibagi bilangan selain 1 dan bilangan itu sendiri
-	for i := 3; i < bil; i++ {
+	for i := 3; i*i < bil; i+=2 {
 		if bil%i == 0 {
 			return false
 		}
@@ -59,3 +65,4 @@ func isMultiple7(bil int) bool {
 func areaOfTrapezoid(a int, b int, t int) int {
 	return (a + b) / 2 * t
 }
+
