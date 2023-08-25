@@ -37,7 +37,7 @@ func main() {
 	fmt.Println(angka)
 
 //irate array using for loop
-//  tehnik pertama
+//  teknik pertama
 	for i := 0; i < len(angka); i++ {
 		print(angka[i])
 	}
