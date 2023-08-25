@@ -20,3 +20,6 @@ Tugas
 - buatlah sebuah program untuk menentukan bilang prima
 - buatlah sebuah program untuk menentukan bilangan kelipatan 7
 - buatlah sebuah program untuk menghitung luas trapesium
+
+
+## Days 3 ~ Structure data
