@@ -20,24 +20,21 @@ func main() {
 
 func arrayMerge(arrayA, arrayB []string) []string {
 	
-	var mergeArray []string
-	var NewArray []string
+	mergeArray := []string{}
+	NewArray := []string{}
 	mapChecker := make(map[string]int)
-
 
 	//merge array
 	mergeArray = append(arrayA, arrayB...)
 
-	//cek apakah ada niali yang sama
-	//membuat map
-	
-
-	// lakukan perulangan untuk memasukkan nilai array yang sudah di merge ke dalam map
-	// karna key di map bersifat unik maka value di array diganti menjadi key di map agar otomatis menghapus value uang sama
+	// buat perulangan pada array yang sudah di merge
 	for i, v := range mergeArray {
+		// cek apakah nilai dari array ada di dalam map
 		_, exist := mapChecker[v]
 		if !exist {
+			// kalau tidak ada masukkan value dari array untuk di jadikan key di map  
 			mapChecker[v] = i
+			// lalu masukkan nilai ke dalam aray baru 
 			NewArray = append(NewArray, v)
 		}
 	}
@@ -45,15 +42,20 @@ func arrayMerge(arrayA, arrayB []string) []string {
 	return NewArray
 }
 
+
 func Mapping(slice []string) map[string]int {
+	
 	result := make(map[string]int)
 
-
+	// lakukan perulangan pada slice 
 	for _, v := range slice {
 		value, exist := result[v]
+		// cek apakah map dengan key value dari slice ada atau tidak
 		if exist {
+			// jika ada maka value + 1
 			result[v] = value+1
 		}else{
+			// jika tidak ada maka value = 1 dan mambuat data baru dengan key = value dari slice
 			result[v] = 1
 		}
 		
