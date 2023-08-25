@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+	fmt.Println("======================== TUGAS 1 ===========================================")
 	fmt.Println("soal pertama : ", arrayMerge([]string{"king", "devil jin", "akuma"}, []string{"eddie", "steve", "geese"}))
 	fmt.Println("soal kedua   : ", arrayMerge([]string{"sergei", "jin"}, []string{"jin", "steve", "bryan"}))
 	fmt.Println("soal ketiga  : ", arrayMerge([]string{"alisa", "yoshimitsu"}, []string{"devil jin", "yoshimitsu", "alisa", "law"}))
@@ -12,10 +13,10 @@ func main() {
 	fmt.Println("soal kelima  : ", arrayMerge([]string{"hwoarang"}, []string{}))
 	fmt.Println("soal keenam  : ", arrayMerge([]string{}, []string{}))
 
-	fmt.Println("====================================================================")
-	fmt.Println("soal pertama : ", Mapping([]string{"asd", "qwe", "asd", "adi", "qwe", "qwe"}))
-	fmt.Println("soal kedua   : ", Mapping([]string{"asd", "qwe", "asd"}))
-	fmt.Println("soal ketiga  : ", Mapping([]string{}))
+	fmt.Println("============================ TUGAS 1 ========================================");
+	fmt.Println("soal pertama : ", Mapping([]string{"asd", "qwe", "asd", "adi", "qwe", "qwe"}));
+	fmt.Println("soal kedua   : ", Mapping([]string{"asd", "qwe", "asd"}));
+	fmt.Println("soal ketiga  : ", Mapping([]string{}));
 }
 
 func arrayMerge(arrayA, arrayB []string) []string {
@@ -63,4 +64,28 @@ func Mapping(slice []string) map[string]int {
 
 	return result
 
+}
+
+func MunculSekali(angka string) []int {
+	nomer := []int{}
+	cek := make(map[rune]int)
+	
+	for _, v := range angka {
+		value, exist := cek[v]
+		if !exist{
+			cek[v] = 1
+		}else{
+			cek[v]=value+1
+		}
+	} 
+
+	for k, v := range cek {
+		if v == 1 {
+			nomer = append(nomer, int(k))
+		}
+	}
+
+
+
+	return nomer;
 }
