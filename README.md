@@ -38,5 +38,5 @@ hanya muncul 1 kali pada input.
 
 ## Catatan
 
-nilai null dgi golang adalah nil
-pada for range terdapat 2 buah nilai yaitu key/index dan value. jika hanya ingin mendapatkan index/key value tidak perlu ditambahkan. tapi jika ingin mendapatkan value tanpa key/index diganti dengan _ (undescore)
+* nilai null dgi golang adalah nil
+* pada for range terdapat 2 buah nilai yaitu key/index dan value. jika hanya ingin mendapatkan index/key value tidak perlu ditambahkan. tapi jika ingin mendapatkan value tanpa key/index diganti dengan _ (undescore)
