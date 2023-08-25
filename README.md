@@ -23,3 +23,20 @@ Tugas
 
 
 ## Days 3 ~ Structure data
+Tugas 
+
+- Buatlah sebuah program menggabungkan 2 array yang diberikan, dan jangan sampai terdapat nama yang sama di data yang sudah tergabung tadi!
+- buatlah sebuah program yang dapat menghitung berapa banyak sebuah string yang sama didalam sebuah slice!
+- Buat program sesuai dengan deskripsi di bawah. Input merupakan variable
+string berisi kumpulan angka. Output merupakan list / array berisi angka yang
+hanya muncul 1 kali pada input.
+
+
+
+
+
+
+## Catatan
+
+nilai null dgi golang adalah nil
+pada for range terdapat 2 buah nilai yaitu key/index dan value. jika hanya ingin mendapatkan index/key value tidak perlu ditambahkan. tapi jika ingin mendapatkan value tanpa key/index diganti dengan _ (undescore)
