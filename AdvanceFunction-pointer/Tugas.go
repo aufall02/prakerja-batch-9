@@ -6,7 +6,7 @@ func main() {
 
 	carSedan := Car{
 		Type:   "sedan",
-		fuelln: 4,
+		fuelln: 1.5,
 	}
 
 	fmt.Println(carSedan.mileage())
@@ -14,11 +14,11 @@ func main() {
 
 type Car struct {
 	Type   string
-	fuelln int
+	fuelln float32
 }
 
 func (car Car) mileage() (string, float32, string) {
 	// (1.5 L / mill)
-	jarakTempuh := float32(car.fuelln) / 1.5
+	jarakTempuh := car.fuelln / 1.5
 	return "jarak yang bisa ditempuh oleh mobile " + car.Type + " adalah ", jarakTempuh, " mill"
 }
