@@ -31,6 +31,20 @@ Tugas
 string berisi kumpulan angka. Output merupakan list / array berisi angka yang
 hanya muncul 1 kali pada input.
 
+##  Days 4 ~ String, Advance Function, Pointer, Heap & Stack, Struct, Method, Interface, Garbage Collector, Package & Error Handling
+Tugas
+
+- Buatlah sebuah method untuk menghitung perkiraan jarak yang bisa
+ditempuh berdasarkan bahan bakar yang sedang terisi (1.5 L / mill), method
+tersebut receiver kepada struct Car yang memiliki property type dan fuelln!
+- Buat sebuah struct dengan nama Student yang mempunyai properti name
+dan score dalam bentuk slice kemudian simpan data siswa sebanyak 5 siswa.
+Setelah 5 siswa dimasukkan maka program menunjukkan skor rata-rata,
+siswa yang memiliki skor minimum dan maksimal? (implementasikan
+method)
+
+
+
 
 
 
@@ -40,3 +54,4 @@ hanya muncul 1 kali pada input.
 
 * nilai null dgi golang adalah nil
 * pada for range terdapat 2 buah nilai yaitu key/index dan value. jika hanya ingin mendapatkan index/key value tidak perlu ditambahkan. tapi jika ingin mendapatkan value tanpa key/index diganti dengan _ (undescore)
+* Interface digunakan untuk komunikasi
