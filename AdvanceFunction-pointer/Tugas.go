@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+	var a1, a2, a3, a4, a5, a6, min, max int
 
 	carSedan := Car{
 		Type:   "sedan",
@@ -16,11 +17,20 @@ func main() {
 		scores: []float32{80, 75, 70, 75, 60},
 	}
 
+	fmt.Scan(&a1)
+	fmt.Scan(&a2)
+	fmt.Scan(&a3)
+	fmt.Scan(&a4)
+	fmt.Scan(&a5)
+	fmt.Scan(&a6)
+	min, max = getMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
+
 	fmt.Println(carSedan.mileage())
 	fmt.Println(studen.average())
 	fmt.Println(studen.max())
 	fmt.Println(studen.min())
-	
+	fmt.Println(min, max)
+
 }
 
 // soal pertama
@@ -41,15 +51,15 @@ type Student struct {
 	scores []float32
 }
 
-type angka struct {
+type minMax struct {
 	name  string
 	score int
 }
 
 type Skor interface {
 	average() float32
-	min() angka
-	max() angka
+	min() minMax
+	max() minMax
 }
 
 func (s Student) average() float32 {
@@ -61,7 +71,7 @@ func (s Student) average() float32 {
 	return float32(average)
 }
 
-func (s Student) min() angka {
+func (s Student) min() minMax {
 	var min = s.scores[0]
 	var sMin int
 
@@ -72,7 +82,7 @@ func (s Student) min() angka {
 		}
 	}
 
-	m := angka{
+	m := minMax{
 		name:  s.names[sMin],
 		score: int(min),
 	}
@@ -80,7 +90,7 @@ func (s Student) min() angka {
 	return m
 }
 
-func (s Student) max() angka {
+func (s Student) max() minMax {
 	var max = s.scores[0]
 	var sMax int
 
@@ -91,10 +101,29 @@ func (s Student) max() angka {
 		}
 	}
 
-	m := angka{
+	m := minMax{
 		name:  s.names[sMax],
 		score: int(max),
 	}
 
 	return m
+}
+
+// Soal ketiga
+func getMinMax(numbers ...*int)(min int, max int) {
+	//code
+
+	base := *numbers[0]
+	
+	for _, number := range numbers {
+		temp := *number
+
+		if temp <= base  {
+			min = temp
+		}else if temp >= base{
+			max = temp
+		}
+	}
+	
+	return min, max
 }
