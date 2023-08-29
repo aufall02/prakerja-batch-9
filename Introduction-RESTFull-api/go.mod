@@ -1,4 +1,4 @@
-module Introduction-Go-lang
+module echo
 
 go 1.21.0
 

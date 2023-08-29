@@ -11,7 +11,7 @@ const (
 	baseURL = "https://swapi.dev/api/"
 )
 
-func main() {
+func ConsumeApi() {
 	response, _ := http.Get(baseURL+"people/1") 
 	responseData, _ :=io.ReadAll(response.Body)
 	defer  response.Body.Close()
