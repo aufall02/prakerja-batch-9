@@ -8,7 +8,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func main() {
+func Echo() {
 	e := echo.New()
 	//route handler
 
