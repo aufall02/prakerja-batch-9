@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
 	var a1, a2, a3, a4, a5, a6, min, max int
+	// var a1, a2, a3, a4, a5, a6 int
 
 	carSedan := Car{
 		Type:   "sedan",
@@ -23,6 +25,7 @@ func main() {
 	fmt.Scan(&a4)
 	fmt.Scan(&a5)
 	fmt.Scan(&a6)
+	t1 := time.Now()
 	min, max = getMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
 
 	fmt.Println(carSedan.mileage())
@@ -30,6 +33,13 @@ func main() {
 	fmt.Println(studen.max())
 	fmt.Println(studen.min())
 	fmt.Println(min, max)
+	// getMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
+	
+	
+	t2 := time.Now()
+	duration := t2.Sub(t1)
+	println()
+	println( "time duratioan yaitu : ",duration.Microseconds())
 
 }
 
@@ -110,20 +120,27 @@ func (s Student) max() minMax {
 }
 
 // Soal ketiga
-func getMinMax(numbers ...*int)(min int, max int) {
+func getMinMax(numbers ...*int) (min int, max int) {
+// func getMinMax(numbers ...*int) {
 	//code
-
+	// var min,  max int
 	base := *numbers[0]
-	
+	min = base
+	max = base
+
 	for _, number := range numbers {
 		temp := *number
-
-		if temp <= base  {
+		if temp <= min {
 			min = temp
-		}else if temp >= base{
+		} 
+
+		if temp >= max {
 			max = temp
 		}
+
+		// println("Base : ", base, " temp : ", temp, " min : ", min, " max : ", max)
+
 	}
-	
+
 	return min, max
 }
