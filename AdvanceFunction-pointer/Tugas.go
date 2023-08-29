@@ -25,13 +25,13 @@ func main() {
 	fmt.Scan(&a5)
 	fmt.Scan(&a6)
 	min, max = getMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
+	// getMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
 
 	fmt.Println(carSedan.mileage())
 	fmt.Println(studen.average())
 	fmt.Println(studen.max())
 	fmt.Println(studen.min())
 	fmt.Println(min, max)
-	// getMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
 
 }
 
