@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
@@ -25,7 +24,6 @@ func main() {
 	fmt.Scan(&a4)
 	fmt.Scan(&a5)
 	fmt.Scan(&a6)
-	t1 := time.Now()
 	min, max = getMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
 
 	fmt.Println(carSedan.mileage())
@@ -34,12 +32,6 @@ func main() {
 	fmt.Println(studen.min())
 	fmt.Println(min, max)
 	// getMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
-	
-	
-	t2 := time.Now()
-	duration := t2.Sub(t1)
-	println()
-	println( "time duratioan yaitu : ",duration.Microseconds())
 
 }
 
