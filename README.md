@@ -42,6 +42,9 @@ dan score dalam bentuk slice kemudian simpan data siswa sebanyak 5 siswa.
 Setelah 5 siswa dimasukkan maka program menunjukkan skor rata-rata,
 siswa yang memiliki skor minimum dan maksimal? (implementasikan
 method)
+- Buatlah program di Golang untuk menemukan nilai maksimum serta minimum
+di antara 6 angka inputan. Gunakan multiple return fungsi, pointer untuk
+referencing maupun deferencing!
 
 
 
