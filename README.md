@@ -46,6 +46,16 @@ method)
 di antara 6 angka inputan. Gunakan multiple return fungsi, pointer untuk
 referencing maupun deferencing!
 
+## Days 5 ~ Introduction to RESTfull api & echo
+Tugas
+
+- tampilkan data yang diperoleh dari API : [link api](https://jsonplaceholder.typicode.com/posts)
+- tampilkan data dengan id 3 yang diperoleh dari API : [link api](https://jsonplaceholder.typicode.com/posts)
+- simpan data postingan ke server melalui API : [link api](https://jsonplaceholder.typicode.com/posts)
+- hapus suatu data melalui API : [link api](https://jsonplaceholder.typicode.com/posts)
+- Clone repository Github : [link github](https://github.com/kokolopo/task-intro-echo.git) lalu
+lengkapi tiap-tiap controller yang ada pada file server.go
+
 
 
 
@@ -58,3 +68,4 @@ referencing maupun deferencing!
 * nilai null dgi golang adalah nil
 * pada for range terdapat 2 buah nilai yaitu key/index dan value. jika hanya ingin mendapatkan index/key value tidak perlu ditambahkan. tapi jika ingin mendapatkan value tanpa key/index diganti dengan _ (undescore)
 * Interface digunakan untuk komunikasi
+* Pada struct terdapat id tapi tidak bisa diexport kalo mau diexport harus dirubah jadi Id(huruf depan kapital)
