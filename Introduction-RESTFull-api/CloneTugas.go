@@ -106,23 +106,32 @@ func UpdateUserController(c echo.Context) error {
 }
 
 // delete user by id
-// func DeleteUserController(c echo.Context) error {
-// 	// catch path param from url
-// 	....
+func DeleteUserController(c echo.Context) error {
+	// catch path param from url
+	id,_ := strconv.Atoi(c.Param("id"))
 
-// 	// looking for data in index of slice users, then delete element in slice users and render JSON response
-// 	for _, v := range users {
-// 		if v.Id == id {
-// 			....
-// 			return c.JSON(http.StatusOK, map[string]interface{}{
-// 				"messages": "delete success",
-// 			})
-// 		}
-// 	}
+	
+	// looking for data in index of slice users, then delete element in slice users and render JSON response
+	usersMap := make(map[int]User) 
+	usersMap[1] = users[0]
+	usersMap[2] = users[1]
 
-// 	// when the data does not exist render JSON response with not found message
-// 	....
-// }
+	for _, v := range users {
+		if v.Id == id {
+			delete(usersMap, id)
+			return c.JSON(http.StatusOK, map[string]interface{}{
+				"messages": "delete success",
+				"users" : usersMap,
+			})
+		}
+	}
+	
+
+	// when the data does not exist render JSON response with not found message
+	return c.JSON(http.StatusOK, map[string]interface{}{
+		"messages": "user not found",
+	})
+}
 
 // ---------------------------------------------------
 func main() {
@@ -138,7 +147,7 @@ func main() {
 	e.GET("/users/:id", GetUserController) //get user by id
 	e.POST("/users", CreateUserController) //Create new user
 	e.PUT("/users/:id", UpdateUserController)    //update user
-	// e.DELETE("/users/:id", DeleteUserController) //delete user
+	e.DELETE("/users/:id", DeleteUserController) //delete user
 
 	// start the server, and log if it fails
 	e.Logger.Fatal(e.Start(":8000"))
