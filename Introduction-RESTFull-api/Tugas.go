@@ -23,15 +23,17 @@ type Data struct {
 }
 
 type ResponseDatas struct {
-	StatusCode int   `json:"status_data"`
-	Datas      *Data `json:"datas"`
+	Message string   `json:"status_data"`
+	Data      Data `json:"datas"`
 }
 
 func main() {
 	e := echo.New()
-	e.GET("/datas/:id", GetDataByIdController)
+	e.GET("/datas/:id", GetDataByIdController) //:id mengambil nilai yang ada di link/id (Param)
 	e.GET("/datas", GetDatasController)
 	e.POST("/datas", CreateDataController)
+	e.PUT("/datas", UpdateDataController) //mengambil nilai id yang ada di link/id (QueriParam)
+	e.DELETE("/datas/:id", DeleteDataController)
 	e.Start(":8000")
 }
 
@@ -88,6 +90,71 @@ func CreateDataController(c echo.Context) (err error) {
 
 	//send response ke
 	return c.JSON(http.StatusCreated, data)
+
+}
+
+// update data data ke [link api](https://jsonplaceholder.typicode.com/posts)
+func UpdateDataController(c echo.Context) (err error) {
+	id := c.QueryParam("id")
+	println(id)
+	//ambil json request dari user
+	jsonBody := make(map[string]interface{})
+	err = json.NewDecoder(c.Request().Body).Decode(&jsonBody)
+	if err != nil {
+
+		fmt.Println("error")
+		return nil
+	}
+	//ubah data json ke byte
+	out, _ := json.Marshal(&jsonBody)
+	var jsonStr = []byte(out)
+
+	// lakukan post post ke api
+	req, err := http.NewRequest("PUT", URL+"/"+id, bytes.NewBuffer(jsonStr))
+	req.Header.Set("Content-Type", "application/json")
+	fmt.Println(URL+"/"+id)
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+	//ambil body dari hasil requets ke api
+	body, _ := io.ReadAll(resp.Body)
+
+	//convert ke json lagi
+	var data Data
+	json.Unmarshal(body, &data)
+
+	//send response ke
+	return c.JSON(http.StatusCreated, data)
+
+}
+
+// deletedata data ke [link api](https://jsonplaceholder.typicode.com/posts)
+func DeleteDataController(c echo.Context) (err error) {
+	id := c.Param("id")
+	 req, err := http.NewRequest("DELETE", URL+"/"+id, nil)
+	 if err != nil {
+		 panic(err)
+	 }
+	 client := &http.Client{}
+	 resp, err := client.Do(req)
+	 if err != nil {
+		 panic(err)
+	 }
+	 defer resp.Body.Close()
+	 body, err := io.ReadAll(resp.Body)
+	 if err != nil {
+		 panic(err)
+	 }
+	 var data Data
+	json.Unmarshal(body, &data)
+	message := fmt.Sprintf ("id %s berhasil dihapus",id)
+	return c.JSON(http.StatusCreated, ResponseDatas{
+		Message: message,
+		Data: data,
+	})
 
 }
 
