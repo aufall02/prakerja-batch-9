@@ -20,7 +20,7 @@ func Echo() {
 
 }
 
-type User struct {
+type Userr struct {
 	Id    int    `json:"id"`
 	Nama  string `json:"nama" form:"nama"`
 	Email string `json:"email" form:"nama"`
@@ -35,27 +35,27 @@ func HelloController(c echo.Context) error {
 	return c.String(http.StatusOK, "Hello word")
 }
 
-func GetUserController(c echo.Context) error {
+func GetUserControllerr(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
 	fmt.Println(id)
-	user := User{Id: id, Nama: "Aufal Marom", Email: "aufaluzumaki@gmail.com"}
-	return c.JSON(http.StatusOK, map[string]User{
+	user := Userr{Id: id, Nama: "Aufal Marom", Email: "aufaluzumaki@gmail.com"}
+	return c.JSON(http.StatusOK, map[string]Userr{
 		"user": user,
 	})
 }
 
 func GetUserByIdController(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
-	user := User{Id: id, Nama: "Aufal Marom", Email: "aufaluzumaki@gmail.com"}
-	return c.JSON(http.StatusOK, map[string]User{
+	user := Userr{Id: id, Nama: "Aufal Marom", Email: "aufaluzumaki@gmail.com"}
+	return c.JSON(http.StatusOK, map[string]Userr{
 		"user": user,
 	})
 }
 
 func UserSearchController(c echo.Context) error {
 	nama := c.QueryParam("nama")
-	user := User{Id: 1, Nama: nama, Email: "aufaluzumaki@gmail.com"}
-	return c.JSON(http.StatusOK, map[string]User{
+	user := Userr{Id: 1, Nama: nama, Email: "aufaluzumaki@gmail.com"}
+	return c.JSON(http.StatusOK, map[string]Userr{
 		"user": user,
 	})
 }

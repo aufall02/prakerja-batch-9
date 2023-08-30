@@ -27,7 +27,7 @@ type ResponseDatas struct {
 	Data      Data `json:"datas"`
 }
 
-func main() {
+func Tugas() {
 	e := echo.New()
 	e.GET("/datas/:id", GetDataByIdController) //:id mengambil nilai yang ada di link/id (Param)
 	e.GET("/datas", GetDatasController)
