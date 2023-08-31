@@ -67,14 +67,18 @@ func DeleteUser(nama string) (interface{}, error) {
 }
 
 func UpdateUser(user models.User, nama string) (interface{}, error) {
-	if err := config.DB.Where("nama = ?", nama).First(&user).Error; err != nil {
-		errors.Is(err, gorm.ErrRecordNotFound)
+
+	var userUpdated models.User
+	var err error
+	result := config.DB.First(&userUpdated, "nama = ?", nama)
+	result = config.DB.Model(&userUpdated).Updates(models.User{Nama: user.Nama, Email: user.Email, Password: user.Password})
+
+	err = result.Error
+
+	if err != nil {
 		return nil, err
 	}
 
-	if e := config.DB.Save(&models.User{Email: user.Email, Nama: user.Nama, Password: user.Password}).Error; e != nil {
-		return nil, e
-	}
-	return user, nil
+	return userUpdated, nil
 
 }
