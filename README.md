@@ -57,6 +57,12 @@ Tugas
 lengkapi tiap-tiap controller yang ada pada file server.go
 
 
+## Days 6 ~ Connecting DB dan ORM + mvc
+
+Buat API CRUD User dengan spesifikasi seperti berikut!
+- Pada bagian Sample Code artinya sudah disediakan contoh code yang bisa kamu
+implementasikan.
+- Pada bagian Need Solution Code kamu perlu membuat sendiri code-nya!
 
 
 
